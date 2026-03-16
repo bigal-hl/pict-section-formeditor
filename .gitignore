@@ -1,5 +1,7 @@
 package-lock.json
 
+.data
+
 # Test Environment
 debug/testenv
 

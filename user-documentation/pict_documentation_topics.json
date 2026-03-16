@@ -636,60 +636,52 @@
 	},
 	"SLV-OP-Add": {
 		"TopicCode": "SLV-OP-Add",
-		"TopicHelpFilePath": "Solver-Expression-Walkthrough.md",
-		"TopicTitle": "Addition Operator (+)",
-		"RelevantMarkdownLine": 39
+		"TopicHelpFilePath": "solveroperators/add.md",
+		"TopicTitle": "Addition Operator (+)"
 	},
 	"SLV-OP-Subtract": {
 		"TopicCode": "SLV-OP-Subtract",
-		"TopicHelpFilePath": "Solver-Expression-Walkthrough.md",
-		"TopicTitle": "Subtraction Operator (-)",
-		"RelevantMarkdownLine": 40
+		"TopicHelpFilePath": "solveroperators/subtract.md",
+		"TopicTitle": "Subtraction Operator (-)"
 	},
 	"SLV-OP-Multiply": {
 		"TopicCode": "SLV-OP-Multiply",
-		"TopicHelpFilePath": "Solver-Expression-Walkthrough.md",
-		"TopicTitle": "Multiplication Operator (*)",
-		"RelevantMarkdownLine": 36
+		"TopicHelpFilePath": "solveroperators/multiply.md",
+		"TopicTitle": "Multiplication Operator (*)"
 	},
 	"SLV-OP-Divide": {
 		"TopicCode": "SLV-OP-Divide",
-		"TopicHelpFilePath": "Solver-Expression-Walkthrough.md",
-		"TopicTitle": "Division Operator (/)",
-		"RelevantMarkdownLine": 37
+		"TopicHelpFilePath": "solveroperators/divide.md",
+		"TopicTitle": "Division Operator (/)"
 	},
 	"SLV-OP-Modulus": {
 		"TopicCode": "SLV-OP-Modulus",
-		"TopicHelpFilePath": "Solver-Expression-Walkthrough.md",
-		"TopicTitle": "Modulus Operator (%)",
-		"RelevantMarkdownLine": 38
+		"TopicHelpFilePath": "solveroperators/modulus.md",
+		"TopicTitle": "Modulus Operator (%)"
 	},
 	"SLV-OP-Exponent": {
 		"TopicCode": "SLV-OP-Exponent",
-		"TopicHelpFilePath": "Solver-Expression-Walkthrough.md",
-		"TopicTitle": "Exponentiation Operator (^)",
-		"RelevantMarkdownLine": 35
+		"TopicHelpFilePath": "solveroperators/exponent.md",
+		"TopicTitle": "Exponentiation Operator (^)"
 	},
 	"SLV-OP-SetConcat": {
 		"TopicCode": "SLV-OP-SetConcat",
-		"TopicHelpFilePath": "Solver-Functions.md",
+		"TopicHelpFilePath": "solveroperators/setconcat.md",
 		"TopicTitle": "Set Concatenation Operator (,)"
 	},
 	"SLV-ASSIGN-Equals": {
 		"TopicCode": "SLV-ASSIGN-Equals",
-		"TopicHelpFilePath": "Solver-Expression-Walkthrough.md",
-		"TopicTitle": "Assignment Operator (=)",
-		"RelevantMarkdownLine": 17
+		"TopicHelpFilePath": "solveroperators/assign.md",
+		"TopicTitle": "Assignment Operator (=)"
 	},
 	"SLV-ASSIGN-NullCoalesce": {
 		"TopicCode": "SLV-ASSIGN-NullCoalesce",
-		"TopicHelpFilePath": "Solver-Expression-Walkthrough.md",
-		"TopicTitle": "Null Coalescence Assignment (?=)",
-		"RelevantMarkdownLine": 141
+		"TopicHelpFilePath": "solveroperators/nullcoalesce.md",
+		"TopicTitle": "Null Coalescence Assignment (?=)"
 	},
 	"SLV-ASSIGN-ExpressionBegin": {
 		"TopicCode": "SLV-ASSIGN-ExpressionBegin",
-		"TopicHelpFilePath": "Solver-Expressions-Advanced.md",
+		"TopicHelpFilePath": "solveroperators/expressionbegin.md",
 		"TopicTitle": "Expression Begin Directive (:)"
 	}
 }

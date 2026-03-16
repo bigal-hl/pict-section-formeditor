@@ -2134,6 +2134,12 @@ class PictViewFormEditorPropertiesPanel extends libPictView
 								title: tmpDocProvider._CurrentTitle
 							});
 						}
+						// Expand the properties panel if it is collapsed so the
+						// user can see the help content.
+						if (tmpSelf._ParentFormEditor._PanelCollapsed)
+						{
+							tmpSelf._ParentFormEditor._UtilitiesProvider.togglePropertiesPanel();
+						}
 						// Always go through setPanelTab which rebuilds the
 						// panel DOM fresh (creating #Pict-Content-Body) and
 						// then calls loadArticle from cache synchronously.

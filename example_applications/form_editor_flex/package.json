@@ -40,6 +40,10 @@
 		{
 			"from": "../../user-documentation/solverfunctions/*",
 			"to": "./dist/docs/solverfunctions/"
+		},
+		{
+			"from": "../../user-documentation/solveroperators/*",
+			"to": "./dist/docs/solveroperators/"
 		}
 	],
 	"dependencies": {

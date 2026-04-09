@@ -17,6 +17,20 @@
 	- [Reading the Manifest](#/README?id=reading-the-manifest-back)
 	- [Architecture](#/README?id=architecture)
 
+- User Documentation
+	- [Table of Contents](user-docs/ToC.md)
+	- [Getting Started](user-docs/Getting-Started.md)
+	- [Sections](user-docs/Sections.md)
+	- [Groups](user-docs/Groups.md)
+	- [Inputs & Data Types](user-docs/Inputs.md)
+	- [Solvers](user-docs/Solvers.md)
+	- [Keyboard Shortcuts](user-docs/Shortcuts.md)
+
+- Solver Expression Guides
+	- [Solver Expression Walkthrough](user-docs/Solver-Expression-Walkthrough.md)
+	- [Solver Expressions Advanced Topics](user-docs/Solver-Expressions-Advanced.md)
+	- [Solver Functions Reference](user-docs/Solver-Functions.md)
+
 - Resources
 	- [Example Application](#/README?id=example-application)
 	- [GitHub](https://github.com/stevenvelozo/pict-section-formeditor)

@@ -33,6 +33,7 @@
     },
     "devDependencies": {
         "pict": "^1.0.363",
+        "pict-docuserve": "^0.1.5",
         "quackage": "^1.1.0"
     },
     "mocha": {

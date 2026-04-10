@@ -195,9 +195,9 @@ DataPoints = SERIES FROM StartX TO EndX STEP Resolution : BaseValue + (n * Slope
 
 Ordinals let you organize solvers into execution phases:
 
-- **Ordinal 1** (default): Core calculations — compute raw values
-- **Ordinal 2**: Derived calculations — aggregate results from ordinal 1
-- **Ordinal 3**: UI updates — color cells, show/hide sections based on computed values
+- **Ordinal 1** (default): Core calculations -- compute raw values
+- **Ordinal 2**: Derived calculations -- aggregate results from ordinal 1
+- **Ordinal 3**: UI updates -- color cells, show/hide sections based on computed values
 
 ### Dynamic Ordinal Control
 
@@ -219,7 +219,7 @@ Or conditionally toggle based on form state:
 setsolverordinalenabled(2, IsAdvancedMode)
 ```
 
-This is useful for performance optimization — skip expensive calculations when their results are not needed.
+This is useful for performance optimization -- skip expensive calculations when their results are not needed.
 
 ## Form UI Control from Solvers
 

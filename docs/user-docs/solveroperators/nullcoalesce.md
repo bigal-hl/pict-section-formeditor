@@ -76,5 +76,5 @@ Tax = round(Subtotal * DefaultRate, 2)
 ## Notes
 
 - A value is considered "empty" if it is undefined, null, or an empty string
-- Zero (`0`) is not considered empty — `?=` will not overwrite a zero value
+- Zero (`0`) is not considered empty -- `?=` will not overwrite a zero value
 - Useful for form defaults that should not overwrite user input on re-solve

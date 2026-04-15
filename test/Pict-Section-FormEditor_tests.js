@@ -137,49 +137,6 @@ suite
 						Expect(tmpPict.AppData.FormConfig.Sections[0].Name).to.equal('My Section');
 					}
 				);
-				test
-				(
-					'Should create a code editor child view on initialize',
-					function ()
-					{
-						let tmpPict = new libPict({ Product: 'TestFormEditor' });
-						tmpPict.AppData = {};
-
-						let tmpView = tmpPict.addView('TestCodeEditorView',
-						{
-							ViewIdentifier: 'TestCodeEditorView',
-							ManifestDataAddress: 'AppData.FormConfig'
-						}, libPictSectionFormEditor);
-
-						tmpView.initialize();
-
-						Expect(tmpView._CodeEditorView).to.be.an('object');
-						Expect(tmpView._CodeEditorView.options.Language).to.equal('json');
-						Expect(tmpView._CodeEditorView.options.LineNumbers).to.equal(true);
-						Expect(tmpView._CodeEditorView.options.ReadOnly).to.equal(true);
-					}
-				);
-				test
-				(
-					'Should update code editor content via _updateCodeEditor',
-					function ()
-					{
-						let tmpPict = new libPict({ Product: 'TestFormEditor' });
-						tmpPict.AppData = {};
-
-						let tmpView = tmpPict.addView('TestUpdateCodeEditor',
-						{
-							ViewIdentifier: 'TestUpdateCodeEditor',
-							ManifestDataAddress: 'AppData.FormConfig'
-						}, libPictSectionFormEditor);
-
-						tmpView.initialize();
-
-						// Without a DOM, codeJar won't be initialized,
-						// so _updateCodeEditor should not throw
-						tmpView._UtilitiesProvider._updateCodeEditor();
-					}
-				);
 			}
 		);
 		suite
@@ -4681,6 +4638,109 @@ suite
 						tmpView.removeExtendedDescriptorProperty('PictForm.Units');
 						Expect(tmpView._ExtendedDescriptorProperties.length).to.equal(1);
 						Expect(tmpView._ExtendedDescriptorProperties[0].Address).to.equal('ExtraData');
+					}
+				);
+			}
+		);
+		suite
+		(
+			'Solution Map',
+			function ()
+			{
+				test
+				(
+					'Should find solvers via _buildSolverHealthReport',
+					function ()
+					{
+						let tmpPict = new libPict({ Product: 'TestFormEditor' });
+						tmpPict.AppData.TestSolverManifest =
+						{
+							Scope: 'TestSolvers',
+							Sections:
+							[
+								{
+									Hash: 'S1',
+									Name: 'Section 1',
+									Groups:
+									[
+										{
+											Hash: 'G1',
+											Name: 'Group 1'
+										}
+									],
+									Solvers:
+									[
+										'Area = Height * Width',
+										{ Expression: 'Volume = Area * Depth', Ordinal: 2 }
+									]
+								}
+							],
+							Descriptors:
+							{
+								'Height':
+								{
+									Name: 'Height',
+									Hash: 'Height',
+									DataType: 'Number',
+									PictForm: { Section: 'S1', Group: 'G1', Row: '1' }
+								},
+								'Width':
+								{
+									Name: 'Width',
+									Hash: 'Width',
+									DataType: 'Number',
+									PictForm: { Section: 'S1', Group: 'G1', Row: '1' }
+								},
+								'Area':
+								{
+									Name: 'Area',
+									Hash: 'Area',
+									DataType: 'Number',
+									PictForm: { Section: 'S1', Group: 'G1', Row: '2' }
+								},
+								'Depth':
+								{
+									Name: 'Depth',
+									Hash: 'Depth',
+									DataType: 'Number',
+									PictForm: { Section: 'S1', Group: 'G1', Row: '2' }
+								},
+								'Volume':
+								{
+									Name: 'Volume',
+									Hash: 'Volume',
+									DataType: 'Number',
+									PictForm: { Section: 'S1', Group: 'G1', Row: '3' }
+								}
+							}
+						};
+
+						let tmpView = tmpPict.addView('TestSolverMap',
+						{
+							ViewIdentifier: 'TestSolverMap',
+							ManifestDataAddress: 'AppData.TestSolverManifest'
+						}, libPictSectionFormEditor);
+
+						tmpView.initialize();
+
+						// Verify health report finds solvers
+						let tmpReport = tmpView._PropertiesPanelView._buildSolverHealthReport();
+						Expect(tmpReport.TotalSolvers).to.equal(2);
+						Expect(tmpReport.SectionSolvers).to.equal(2);
+						Expect(tmpReport.AllExpressions.length).to.equal(2);
+						Expect(tmpReport.AllExpressions[0].Expression).to.equal('Area = Height * Width');
+						Expect(tmpReport.AllExpressions[1].Expression).to.equal('Volume = Area * Depth');
+
+						// Verify Solution Map view exists and can build flow data
+						Expect(tmpView._SolutionMapView).to.be.an('object');
+						let tmpFlowData = tmpView._SolutionMapView._buildFlowData();
+						Expect(tmpFlowData.Nodes.length).to.equal(2);
+						Expect(tmpFlowData.Nodes[0].Data.AssignmentHash).to.equal('Area');
+						Expect(tmpFlowData.Nodes[1].Data.AssignmentHash).to.equal('Volume');
+						// Volume references Area, so there should be one connection
+						Expect(tmpFlowData.Connections.length).to.equal(1);
+						Expect(tmpFlowData.Connections[0].SourceNodeHash).to.equal(tmpFlowData.Nodes[0].Hash);
+						Expect(tmpFlowData.Connections[0].TargetNodeHash).to.equal(tmpFlowData.Nodes[1].Hash);
 					}
 				);
 			}

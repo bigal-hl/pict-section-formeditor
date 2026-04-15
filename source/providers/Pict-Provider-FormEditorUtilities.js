@@ -849,30 +849,6 @@ class FormEditorUtilities extends libPictProvider
 		// to jump.  The searchable selector dropdowns provide easy navigation.
 	}
 
-	_updateCodeEditor()
-	{
-		let tmpManifest = this._ParentFormEditor._ManifestOpsProvider.getCleanManifestForExport();
-		let tmpJSON = JSON.stringify(tmpManifest, null, '\t');
-
-		if (this._ParentFormEditor._CodeEditorView)
-		{
-			if (this._ParentFormEditor._CodeEditorView.codeJar)
-			{
-				// Code editor already initialized — just update the code
-				this._ParentFormEditor._CodeEditorView.setCode(tmpJSON);
-			}
-			else
-			{
-				// First time switching to JSON tab — render the code editor
-				this._ParentFormEditor._CodeEditorView.render();
-				// After render, setCode with current manifest
-				if (this._ParentFormEditor._CodeEditorView.codeJar)
-				{
-					this._ParentFormEditor._CodeEditorView.setCode(tmpJSON);
-				}
-			}
-		}
-	}
 }
 
 module.exports = FormEditorUtilities;

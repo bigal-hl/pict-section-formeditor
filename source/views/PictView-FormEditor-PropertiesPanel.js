@@ -3604,6 +3604,10 @@ class PictViewFormEditorPropertiesPanel extends libPictView
 			{
 				tmpRow.Inputs[tmpIdx] = tmpNewAddress;
 			}
+
+			// Restore Descriptors key order to match Row.Inputs so the
+			// re-keyed input does not jump to the end of the row.
+			this._ParentFormEditor._ManifestOpsProvider._reorderDescriptorsForRow(tmpRow.Inputs);
 		}
 	}
 

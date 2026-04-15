@@ -15,6 +15,7 @@ const libFormEditorManifestOps = require('../providers/Pict-Provider-FormEditorM
 const libChildPictManager = require('../providers/Pict-Provider-ChildPictManager.js');
 const libPreviewCSS = require('../providers/Pict-Provider-PreviewCSS.js');
 const libFormEditorDocumentation = require('../providers/Pict-Provider-FormEditorDocumentation.js');
+const libFormEditorSolutionMap = require('./PictView-FormEditor-SolutionMap.js');
 const libManifestFactory = require('pict-section-form').ManifestFactory;
 const libManifestConversionToCSV = require('pict-section-form').ManifestConversionToCSV;
 
@@ -35,8 +36,8 @@ class PictViewFormEditor extends libPictView
 
 		// Child view references
 		this._ObjectEditorView = null;
-		this._CodeEditorView = null;
 		this._SolverCodeEditorView = null;
+		this._SolutionMapView = null;
 		this._HelpContentView = null;
 		this._HelpContentProvider = null;
 		this._DocumentationProvider = null;
@@ -296,52 +297,8 @@ class PictViewFormEditor extends libPictView
 		this._PropertiesPanelView._ParentFormEditor = this;
 		this._PropertiesPanelView.initialize();
 
-		// Create the code editor child view (pict-section-code for JSON tab)
-		let tmpCodeEditorHash = `${this.Hash}-CodeEditor`;
-		this._CodeEditorView = this.pict.addView(
-			tmpCodeEditorHash,
-			{
-				ViewIdentifier: tmpCodeEditorHash,
-				TargetElementAddress: `#FormEditor-CodeEditor-Container-${this.Hash}`,
-				Language: 'json',
-				ReadOnly: true,
-				LineNumbers: true,
-				DefaultCode: '{}',
-				AutoRender: false,
-				RenderOnLoad: false,
-				DefaultRenderable: 'CodeEditor-Wrap',
-				DefaultDestinationAddress: `#FormEditor-CodeEditor-Container-${this.Hash}`,
-				Renderables:
-				[
-					{
-						RenderableHash: 'CodeEditor-Wrap',
-						TemplateHash: 'CodeEditor-Container',
-						DestinationAddress: `#FormEditor-CodeEditor-Container-${this.Hash}`
-					}
-				]
-			},
-			libPictSectionCode
-		);
-		this._CodeEditorView.initialize();
-
-		// Override onCodeChange to sync edits back to manifest
-		let tmpSelf = this;
-		this._CodeEditorView.onCodeChange = function(pCode)
-		{
-			// Try to parse; silently ignore invalid JSON while user is typing
-			try
-			{
-				let tmpParsed = JSON.parse(pCode);
-				tmpSelf._ManifestOpsProvider.stripRowsFromManifest(tmpParsed);
-				tmpSelf._setManifestData(tmpParsed);
-			}
-			catch (e)
-			{
-				// JSON not yet valid — no-op until user finishes editing
-			}
-		};
-
 		// Create the solver code editor child view (pict-section-code for Solver Editor tab)
+		let tmpSelf = this;
 		let tmpSolverCodeEditorHash = `${this.Hash}-SolverCodeEditor`;
 		this._SolverCodeEditorView = this.pict.addView(
 			tmpSolverCodeEditorHash,
@@ -374,6 +331,18 @@ class PictViewFormEditor extends libPictView
 
 		// Set a custom solver DSL highlight function
 		this._SolverCodeEditorView.setHighlightFunction(this._buildSolverHighlightFunction());
+
+		// Create the Solution Map child view
+		let tmpSolutionMapHash = `${this.Hash}-SolutionMap`;
+		this._SolutionMapView = this.pict.addView(
+			tmpSolutionMapHash,
+			{
+				ViewIdentifier: tmpSolutionMapHash,
+				AutoRender: false
+			},
+			libFormEditorSolutionMap
+		);
+		this._SolutionMapView._ParentFormEditor = this;
 
 		// Create the help content view (PictContentView for rendering parsed markdown)
 		let tmpHelpContentViewHash = `${this.Hash}-HelpContentView`;
@@ -634,24 +603,6 @@ class PictViewFormEditor extends libPictView
 			this._ObjectEditorView.render();
 			this._ObjectEditorView.expandToDepth(2);
 		}
-		else if (pTabName === 'json')
-		{
-			// Reset to read-only each time the tab is opened
-			if (this._CodeEditorView)
-			{
-				this._CodeEditorView.setReadOnly(true);
-			}
-			// Sync the checkbox
-			if (typeof document !== 'undefined')
-			{
-				let tmpCheckbox = document.getElementById(`FormEditor-JSON-ReadOnly-${this.Hash}`);
-				if (tmpCheckbox)
-				{
-					tmpCheckbox.checked = true;
-				}
-			}
-			this._UtilitiesProvider._updateCodeEditor();
-		}
 		else if (pTabName === 'visual')
 		{
 			this.renderVisualEditor();
@@ -672,6 +623,13 @@ class PictViewFormEditor extends libPictView
 			if (this._PropertiesPanelView)
 			{
 				this._PropertiesPanelView.renderSolversTabPanel();
+			}
+		}
+		else if (pTabName === 'solutionmap')
+		{
+			if (this._SolutionMapView)
+			{
+				this._SolutionMapView.renderSolutionMap();
 			}
 		}
 		else if (pTabName === 'listdata')
@@ -701,26 +659,11 @@ class PictViewFormEditor extends libPictView
 		}
 	}
 
-	_toggleJSONReadOnly(pIsReadOnly)
-	{
-		if (this._CodeEditorView)
-		{
-			this._CodeEditorView.setReadOnly(pIsReadOnly);
-			if (pIsReadOnly)
-			{
-				// Normalize row numbers after manual JSON edits
-				this._ManifestOpsProvider.normalizeAllRowNumbers();
-				// Refresh the editor content from the manifest when locking
-				this._UtilitiesProvider._updateCodeEditor();
-			}
-		}
-	}
-
 	_syncTabState()
 	{
 		let tmpHash = this.Hash;
-		let tmpTabs = ['formoverview', 'visual', 'solvereditor', 'solvers', 'listdata', 'entitydata', 'json', 'import', 'objecteditor', 'preview'];
-		let tmpTabNames = ['FormOverview', 'Visual', 'SolverEditor', 'Solvers', 'ListData', 'EntityData', 'JSON', 'Import', 'ObjectEditor', 'Preview'];
+		let tmpTabs = ['formoverview', 'visual', 'solvereditor', 'solvers', 'solutionmap', 'listdata', 'entitydata', 'import', 'objecteditor', 'preview'];
+		let tmpTabNames = ['FormOverview', 'Visual', 'SolverEditor', 'Solvers', 'SolutionMap', 'ListData', 'EntityData', 'Import', 'ObjectEditor', 'Preview'];
 
 		for (let i = 0; i < tmpTabs.length; i++)
 		{

@@ -26,9 +26,9 @@ class FormEditorRendering extends libPictProvider
 		tmpHTML += `<button class="pict-fe-tab" id="FormEditor-Tab-Visual-${tmpHash}" onclick="${tmpViewRef}.switchTab('visual')">Visual Editor</button>`;
 		tmpHTML += `<button class="pict-fe-tab" id="FormEditor-Tab-SolverEditor-${tmpHash}" onclick="${tmpViewRef}.switchTab('solvereditor')">Solver Editor</button>`;
 		tmpHTML += `<button class="pict-fe-tab" id="FormEditor-Tab-Solvers-${tmpHash}" onclick="${tmpViewRef}.switchTab('solvers')">Solvers</button>`;
+		tmpHTML += `<button class="pict-fe-tab" id="FormEditor-Tab-SolutionMap-${tmpHash}" onclick="${tmpViewRef}.switchTab('solutionmap')">Solution Map</button>`;
 		tmpHTML += `<button class="pict-fe-tab" id="FormEditor-Tab-ListData-${tmpHash}" onclick="${tmpViewRef}.switchTab('listdata')">List Data</button>`;
 		tmpHTML += `<button class="pict-fe-tab" id="FormEditor-Tab-EntityData-${tmpHash}" onclick="${tmpViewRef}.switchTab('entitydata')">Providers</button>`;
-		tmpHTML += `<button class="pict-fe-tab" id="FormEditor-Tab-JSON-${tmpHash}" onclick="${tmpViewRef}.switchTab('json')">JSON</button>`;
 		tmpHTML += `<button class="pict-fe-tab" id="FormEditor-Tab-Import-${tmpHash}" onclick="${tmpViewRef}.switchTab('import')">Import</button>`;
 		// Object Editor and Preview tabs are hidden by default but panels remain for programmatic access
 		tmpHTML += `<button class="pict-fe-tab" id="FormEditor-Tab-ObjectEditor-${tmpHash}" onclick="${tmpViewRef}.switchTab('objecteditor')" style="display:none;">Object Editor</button>`;
@@ -59,6 +59,11 @@ class FormEditorRendering extends libPictProvider
 		tmpHTML += `<div id="FormEditor-SolversTab-Container-${tmpHash}"></div>`;
 		tmpHTML += '</div>';
 
+		// Solution Map tab panel
+		tmpHTML += `<div class="pict-fe-tabcontent" id="FormEditor-Panel-SolutionMap-${tmpHash}">`;
+		tmpHTML += `<div id="FormEditor-SolutionMap-Container-${tmpHash}" style="width:100%;height:100%;min-height:400px;"></div>`;
+		tmpHTML += '</div>';
+
 		// List Data tab panel
 		tmpHTML += `<div class="pict-fe-tabcontent" id="FormEditor-Panel-ListData-${tmpHash}">`;
 		tmpHTML += `<div id="FormEditor-ListDataTab-Container-${tmpHash}"></div>`;
@@ -72,14 +77,6 @@ class FormEditorRendering extends libPictProvider
 		// Object editor panel
 		tmpHTML += `<div class="pict-fe-tabcontent" id="FormEditor-Panel-ObjectEditor-${tmpHash}">`;
 		tmpHTML += `<div id="FormEditor-ObjectEditor-Container-${tmpHash}"></div>`;
-		tmpHTML += '</div>';
-
-		// JSON panel
-		tmpHTML += `<div class="pict-fe-tabcontent" id="FormEditor-Panel-JSON-${tmpHash}">`;
-		tmpHTML += '<div class="pict-fe-json-header">';
-		tmpHTML += `<label class="pict-fe-json-readonly-label"><input type="checkbox" id="FormEditor-JSON-ReadOnly-${tmpHash}" checked onchange="${tmpViewRef}._toggleJSONReadOnly(this.checked)" /> Read Only</label>`;
-		tmpHTML += '</div>';
-		tmpHTML += `<div id="FormEditor-CodeEditor-Container-${tmpHash}"></div>`;
 		tmpHTML += '</div>';
 
 		// Import panel

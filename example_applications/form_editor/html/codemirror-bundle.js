@@ -9996,7 +9996,7 @@ var CodeMirrorModules = (() => {
     "&light .cm-gutters": {
       backgroundColor: "#f5f5f5",
       color: "#6c6c6c",
-      border: "0px solid #ddd",
+      border: "0px solid var(--theme-color-border-default, #ddd)",
       "&.cm-gutters-before": { borderRightWidth: "1px" },
       "&.cm-gutters-after": { borderLeftWidth: "1px" }
     },
@@ -10082,7 +10082,7 @@ var CodeMirrorModules = (() => {
       userSelect: "none"
     },
     ".cm-highlightSpace": {
-      backgroundImage: "radial-gradient(circle at 50% 55%, #aaa 20%, transparent 5%)",
+      backgroundImage: "radial-gradient(circle at 50% 55%, var(--theme-color-text-muted, #aaa) 20%, transparent 5%)",
       backgroundPosition: "center"
     },
     ".cm-highlightTab": {
@@ -10103,14 +10103,14 @@ var CodeMirrorModules = (() => {
     },
     "&light .cm-button": {
       backgroundImage: "linear-gradient(#eff1f5, #d9d9df)",
-      border: "1px solid #888",
+      border: "1px solid var(--theme-color-text-muted, #888)",
       "&:active": {
         backgroundImage: "linear-gradient(#b4b4b4, #d0d3d6)"
       }
     },
     "&dark .cm-button": {
       backgroundImage: "linear-gradient(#393939, #111)",
-      border: "1px solid #888",
+      border: "1px solid var(--theme-color-text-muted, #888)",
       "&:active": {
         backgroundImage: "linear-gradient(#111, #333)"
       }
@@ -10126,7 +10126,7 @@ var CodeMirrorModules = (() => {
       backgroundColor: "white"
     },
     "&dark .cm-textfield": {
-      border: "1px solid #555",
+      border: "1px solid var(--theme-color-text-secondary, #555)",
       backgroundColor: "inherit"
     }
   }, lightDarkIDs);
@@ -13063,7 +13063,7 @@ var CodeMirrorModules = (() => {
       boxSizing: "border-box"
     },
     "&light .cm-tooltip": {
-      border: "1px solid #bbb",
+      border: "1px solid var(--theme-color-text-muted, #bbb)",
       backgroundColor: "#f5f5f5"
     },
     "&light .cm-tooltip-section:not(:first-child)": {
@@ -18129,7 +18129,7 @@ var CodeMirrorModules = (() => {
   var baseTheme$12 = /* @__PURE__ */ EditorView.baseTheme({
     ".cm-foldPlaceholder": {
       backgroundColor: "#eee",
-      border: "1px solid #ddd",
+      border: "1px solid var(--theme-color-border-default, #ddd)",
       color: "#888",
       borderRadius: ".2em",
       margin: "0 1px",

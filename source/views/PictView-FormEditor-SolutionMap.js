@@ -686,7 +686,7 @@ class PictViewFormEditorSolutionMap extends libPictView
 .pict-fe-solutionmap-card-body {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 	font-size: 11px;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	padding: 2px 4px;
 	overflow: hidden;
 }
@@ -716,7 +716,7 @@ class PictViewFormEditorSolutionMap extends libPictView
 .pict-fe-solutionmap-tooltip {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 	font-size: 12px;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	max-width: 380px;
 }
 .pict-fe-solutionmap-tooltip-header {

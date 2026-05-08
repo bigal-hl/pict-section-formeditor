@@ -37,8 +37,8 @@ module.exports = (
 	position: relative;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 	font-size: 14px;
-	color: #3D3229;
-	background: #FDFCFA;
+	color: var(--theme-color-text-primary, #3D3229);
+	background: var(--theme-color-background-panel, #FDFCFA);
 	border: 1px solid #E8E3DA;
 	border-radius: 6px;
 	overflow: hidden;
@@ -70,14 +70,14 @@ module.exports = (
 }
 .pict-fe-tab:hover
 {
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	background: #EDE8DF;
 }
 .pict-fe-tab-active
 {
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	border-top-color: #9E6B47;
-	background: #FDFCFA;
+	background: var(--theme-color-background-panel, #FDFCFA);
 }
 
 /* ---- Tab Content Panels ---- */
@@ -108,7 +108,7 @@ module.exports = (
 	margin: 0;
 	font-size: 15px;
 	font-weight: 600;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 }
 .pict-fe-btn
 {
@@ -122,7 +122,7 @@ module.exports = (
 	cursor: pointer;
 	font-size: 12px;
 	font-weight: 500;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	user-select: none;
 	transition: background 0.1s, border-color 0.1s;
 }
@@ -135,7 +135,7 @@ module.exports = (
 {
 	background: #9E6B47;
 	border-color: #9E6B47;
-	color: #FFF;
+	color: var(--theme-color-background-panel, #FFF);
 }
 .pict-fe-btn-primary:hover
 {
@@ -170,7 +170,7 @@ module.exports = (
 {
 	border: 1px solid #E8E3DA;
 	border-radius: 6px;
-	background: #FDFCFA;
+	background: var(--theme-color-background-panel, #FDFCFA);
 }
 .pict-fe-section-header
 {
@@ -198,7 +198,7 @@ module.exports = (
 {
 	font-weight: 600;
 	font-size: 14px;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	cursor: pointer;
 	border-bottom: 1px dashed transparent;
 }
@@ -240,8 +240,8 @@ module.exports = (
 	border-radius: 3px;
 	font-size: inherit;
 	font-family: inherit;
-	color: #3D3229;
-	background: #FFF;
+	color: var(--theme-color-text-primary, #3D3229);
+	background: var(--theme-color-background-panel, #FFF);
 	box-shadow: 0 0 0 2px rgba(158, 107, 71, 0.15);
 	outline: none;
 	min-width: 80px;
@@ -259,8 +259,8 @@ module.exports = (
 	border-radius: 3px;
 	font-size: 11px;
 	font-family: inherit;
-	color: #3D3229;
-	background: #FFF;
+	color: var(--theme-color-text-primary, #3D3229);
+	background: var(--theme-color-background-panel, #FFF);
 	box-shadow: 0 0 0 2px rgba(158, 107, 71, 0.15);
 	outline: none;
 	cursor: pointer;
@@ -293,7 +293,7 @@ module.exports = (
 {
 	border: 1px solid #E8E3DA;
 	border-radius: 4px;
-	background: #FFF;
+	background: var(--theme-color-background-panel, #FFF);
 }
 .pict-fe-group-header
 {
@@ -302,7 +302,7 @@ module.exports = (
 	justify-content: space-between;
 	padding: 8px 12px;
 	background: #FAFAF8;
-	border-bottom: 1px solid #F0ECE4;
+	border-bottom: 1px solid var(--theme-color-background-secondary, #F0ECE4);
 	border-radius: 4px 4px 0 0;
 }
 .pict-fe-group-header-labels
@@ -317,7 +317,7 @@ module.exports = (
 {
 	font-weight: 500;
 	font-size: 13px;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	cursor: pointer;
 	border-bottom: 1px dashed transparent;
 }
@@ -389,8 +389,8 @@ module.exports = (
 	border-radius: 3px;
 	font-size: 13px;
 	font-family: inherit;
-	color: #3D3229;
-	background: #FFF;
+	color: var(--theme-color-text-primary, #3D3229);
+	background: var(--theme-color-background-panel, #FFF);
 	box-sizing: border-box;
 }
 .pict-fe-field-input:focus
@@ -407,8 +407,8 @@ module.exports = (
 	border-radius: 3px;
 	font-size: 13px;
 	font-family: inherit;
-	color: #3D3229;
-	background: #FFF;
+	color: var(--theme-color-text-primary, #3D3229);
+	background: var(--theme-color-background-panel, #FFF);
 	box-sizing: border-box;
 }
 
@@ -419,10 +419,10 @@ module.exports = (
 }
 .pict-fe-row
 {
-	border: 1px solid #F0ECE4;
+	border: 1px solid var(--theme-color-background-secondary, #F0ECE4);
 	border-radius: 4px;
 	margin-bottom: 6px;
-	background: #FDFCFA;
+	background: var(--theme-color-background-panel, #FDFCFA);
 }
 .pict-fe-row-header
 {
@@ -431,7 +431,7 @@ module.exports = (
 	justify-content: space-between;
 	padding: 4px 8px;
 	background: #F9F7F3;
-	border-bottom: 1px solid #F0ECE4;
+	border-bottom: 1px solid var(--theme-color-background-secondary, #F0ECE4);
 	border-radius: 4px 4px 0 0;
 }
 .pict-fe-row-label
@@ -472,7 +472,7 @@ module.exports = (
 	padding: 3px 8px;
 	border: 1px solid #E8E3DA;
 	border-radius: 3px;
-	background: #FFF;
+	background: var(--theme-color-background-panel, #FFF);
 	font-size: 12px;
 	cursor: pointer;
 	transition: background 0.1s, border-color 0.1s;
@@ -498,7 +498,7 @@ module.exports = (
 .pict-fe-input-name
 {
 	font-size: 11px;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	font-weight: 500;
 	white-space: nowrap;
 }
@@ -600,7 +600,7 @@ module.exports = (
 	justify-content: space-between;
 	padding: 4px 0;
 	margin-bottom: 6px;
-	border-top: 1px solid #F0ECE4;
+	border-top: 1px solid var(--theme-color-background-secondary, #F0ECE4);
 	padding-top: 8px;
 }
 .pict-fe-tabular-columns-list
@@ -777,7 +777,7 @@ module.exports = (
 	align-items: center;
 	justify-content: center;
 	cursor: col-resize;
-	background: #F0ECE4;
+	background: var(--theme-color-background-secondary, #F0ECE4);
 	border: 1px solid #E8E3DA;
 	border-radius: 6px;
 	margin: 6px 0;
@@ -790,7 +790,7 @@ module.exports = (
 {
 	background: #E8E3DA;
 	border-color: #D4CFC6;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 }
 .pict-fe-panel-toggle:active
 {
@@ -829,7 +829,7 @@ module.exports = (
 .pict-fe-panel-tabbar
 {
 	display: flex;
-	background: #F0ECE4;
+	background: var(--theme-color-background-secondary, #F0ECE4);
 	padding: 0;
 	margin: 0;
 	flex-shrink: 0;
@@ -854,12 +854,12 @@ module.exports = (
 }
 .pict-fe-panel-tab:hover
 {
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	background: #E8E3DA;
 }
 .pict-fe-panel-tab-active
 {
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	border-top-color: #9E6B47;
 	background: #FAFAF8;
 }
@@ -870,7 +870,7 @@ module.exports = (
 	padding: 7px 8px;
 	cursor: pointer;
 	border: none;
-	background: #F0ECE4;
+	background: var(--theme-color-background-secondary, #F0ECE4);
 	font-size: 13px;
 	font-weight: 600;
 	color: #8A7F72;
@@ -882,7 +882,7 @@ module.exports = (
 }
 .pict-fe-panel-tab-overflow-btn:hover
 {
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	background: #E8E3DA;
 }
 .pict-fe-panel-tab-overflow-btn-visible
@@ -896,7 +896,7 @@ module.exports = (
 	position: absolute;
 	top: 100%;
 	right: 0;
-	background: #FDFCFA;
+	background: var(--theme-color-background-panel, #FDFCFA);
 	border: 1px solid #E8E3DA;
 	border-radius: 0 0 4px 4px;
 	box-shadow: 0 4px 12px rgba(61, 50, 41, 0.12);
@@ -924,7 +924,7 @@ module.exports = (
 .pict-fe-panel-tab-overflow-item:hover
 {
 	background: #F5F0E8;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 }
 .pict-fe-panel-tab-overflow-item-active
 {
@@ -989,7 +989,7 @@ module.exports = (
 }
 .pict-fe-stats-card
 {
-	background: #FFF;
+	background: var(--theme-color-background-panel, #FFF);
 	border: 1px solid #E8E3DA;
 	border-radius: 5px;
 	padding: 8px 6px;
@@ -1028,7 +1028,7 @@ module.exports = (
 .pict-fe-histogram-label
 {
 	flex: 0 0 80px;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	font-weight: 500;
 	text-align: right;
 	overflow: hidden;
@@ -1076,8 +1076,8 @@ module.exports = (
 	border-radius: 3px;
 	font-size: 12px;
 	font-family: inherit;
-	color: #3D3229;
-	background: #FFF;
+	color: var(--theme-color-text-primary, #3D3229);
+	background: var(--theme-color-background-panel, #FFF);
 	box-sizing: border-box;
 	cursor: pointer;
 }
@@ -1103,7 +1103,7 @@ module.exports = (
 {
 	font-size: 12px;
 	font-weight: 600;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	text-transform: uppercase;
 	letter-spacing: 0.4px;
 }
@@ -1145,8 +1145,8 @@ module.exports = (
 	border-radius: 3px;
 	font-size: 13px;
 	font-family: inherit;
-	color: #3D3229;
-	background: #FFF;
+	color: var(--theme-color-text-primary, #3D3229);
+	background: var(--theme-color-background-panel, #FFF);
 	box-sizing: border-box;
 }
 .pict-fe-props-input:focus
@@ -1178,8 +1178,8 @@ module.exports = (
 	border-radius: 3px;
 	font-size: 13px;
 	font-family: inherit;
-	color: #3D3229;
-	background: #FFF;
+	color: var(--theme-color-text-primary, #3D3229);
+	background: var(--theme-color-background-panel, #FFF);
 	cursor: pointer;
 	text-align: left;
 	box-sizing: border-box;
@@ -1228,7 +1228,7 @@ module.exports = (
 }
 .pict-fe-props-address-cancel
 {
-	background: #FFF;
+	background: var(--theme-color-background-panel, #FFF);
 	color: #A04040;
 }
 .pict-fe-props-address-cancel:hover
@@ -1281,7 +1281,7 @@ module.exports = (
 {
 	font-family: monospace;
 	font-size: 11px;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	background: #FAF8F5;
 	border: 1px solid #E8E3DA;
 	border-radius: 3px;
@@ -1334,8 +1334,8 @@ module.exports = (
 	border-radius: 3px;
 	font-family: monospace;
 	font-size: 12px;
-	color: #3D3229;
-	background: #FFF;
+	color: var(--theme-color-text-primary, #3D3229);
+	background: var(--theme-color-background-panel, #FFF);
 	resize: vertical;
 	box-sizing: border-box;
 }
@@ -1377,7 +1377,7 @@ module.exports = (
 	z-index: 10000;
 	width: 340px;
 	max-height: 420px;
-	background: #FFF;
+	background: var(--theme-color-background-panel, #FFF);
 	border: 1px solid #D4CFC6;
 	border-radius: 8px;
 	box-shadow: 0 8px 24px rgba(61, 50, 41, 0.15), 0 2px 8px rgba(61, 50, 41, 0.08);
@@ -1388,7 +1388,7 @@ module.exports = (
 .pict-fe-inputtype-picker-search
 {
 	padding: 10px 12px 8px 12px;
-	border-bottom: 1px solid #F0ECE4;
+	border-bottom: 1px solid var(--theme-color-background-secondary, #F0ECE4);
 }
 .pict-fe-inputtype-picker-search-input
 {
@@ -1398,8 +1398,8 @@ module.exports = (
 	border-radius: 5px;
 	font-size: 13px;
 	font-family: inherit;
-	color: #3D3229;
-	background: #FDFCFA;
+	color: var(--theme-color-text-primary, #3D3229);
+	background: var(--theme-color-background-panel, #FDFCFA);
 	box-sizing: border-box;
 	outline: none;
 	transition: border-color 0.15s, box-shadow 0.15s;
@@ -1412,7 +1412,7 @@ module.exports = (
 .pict-fe-inputtype-picker-default
 {
 	padding: 4px 8px;
-	border-bottom: 1px solid #F0ECE4;
+	border-bottom: 1px solid var(--theme-color-background-secondary, #F0ECE4);
 }
 .pict-fe-inputtype-picker-categories
 {
@@ -1457,7 +1457,7 @@ module.exports = (
 	align-items: center;
 	font-size: 13px;
 	font-weight: 500;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 }
 .pict-fe-inputtype-picker-item-desc
 {
@@ -1492,7 +1492,7 @@ module.exports = (
 	left: 10vw;
 	width: 80vw;
 	height: 90vh;
-	background: #FFF;
+	background: var(--theme-color-background-panel, #FFF);
 	border-radius: 8px;
 	box-shadow: 0 8px 32px rgba(61, 50, 41, 0.25);
 	z-index: 9999;
@@ -1514,12 +1514,12 @@ module.exports = (
 	flex: 1;
 	font-weight: 600;
 	font-size: 14px;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 }
 .pict-fe-content-editor-close
 {
 	background: #9E6B47;
-	color: #FFF;
+	color: var(--theme-color-background-panel, #FFF);
 	border: none;
 	border-radius: 4px;
 	padding: 6px 16px;
@@ -1546,7 +1546,7 @@ module.exports = (
 	font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
 	font-size: 13px;
 	line-height: 1.6;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	resize: none;
 	outline: none;
 	box-sizing: border-box;
@@ -1556,7 +1556,7 @@ module.exports = (
 	width: 100%;
 	padding: 8px 12px;
 	background: #9E6B47;
-	color: #FFF;
+	color: var(--theme-color-background-panel, #FFF);
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
@@ -1638,7 +1638,7 @@ module.exports = (
 	padding: 2px 8px;
 	border: 1px solid #D4CFC6;
 	border-radius: 3px;
-	background: #FFF;
+	background: var(--theme-color-background-panel, #FFF);
 	color: #9E6B47;
 	font-size: 11px;
 	font-weight: 600;
@@ -1659,7 +1659,7 @@ module.exports = (
 	margin-bottom: 4px;
 	border: 1px solid #E8E3DA;
 	border-radius: 4px;
-	background: #FDFCFA;
+	background: var(--theme-color-background-panel, #FDFCFA);
 	transition: border-color 0.1s, opacity 0.1s;
 }
 .pict-fe-solver-entry:hover
@@ -1684,8 +1684,8 @@ module.exports = (
 	border-radius: 3px;
 	font-family: monospace;
 	font-size: 11px;
-	color: #3D3229;
-	background: #FFF;
+	color: var(--theme-color-text-primary, #3D3229);
+	background: var(--theme-color-background-panel, #FFF);
 	box-sizing: border-box;
 }
 .pict-fe-solver-expression:focus
@@ -1720,8 +1720,8 @@ module.exports = (
 	border-radius: 3px;
 	font-family: monospace;
 	font-size: 11px;
-	color: #3D3229;
-	background: #FFF;
+	color: var(--theme-color-text-primary, #3D3229);
+	background: var(--theme-color-background-panel, #FFF);
 	text-align: center;
 	box-sizing: border-box;
 }
@@ -1744,8 +1744,8 @@ module.exports = (
 }
 .pict-fe-solver-btn:hover
 {
-	color: #3D3229;
-	background: #F0ECE4;
+	color: var(--theme-color-text-primary, #3D3229);
+	background: var(--theme-color-background-secondary, #F0ECE4);
 	border-color: #D4CFC6;
 }
 .pict-fe-solver-btn-remove,
@@ -1772,7 +1772,7 @@ module.exports = (
 .pict-fe-solver-btn-armed
 {
 	opacity: 1 !important;
-	color: #fff !important;
+	color: var(--theme-color-background-panel, #fff) !important;
 	background: #C0392B !important;
 	border-color: #A93226 !important;
 	font-size: 10px;
@@ -1845,8 +1845,8 @@ module.exports = (
 /* Warm palette overrides to match form editor */
 .pict-fe-solver-code-editor-container .pict-code-editor
 {
-	background: #FDFCFA;
-	color: #3D3229;
+	background: var(--theme-color-background-panel, #FDFCFA);
+	color: var(--theme-color-text-primary, #3D3229);
 	caret-color: #9E6B47;
 	font-size: 13px;
 }
@@ -1858,10 +1858,10 @@ module.exports = (
 }
 /* Syntax highlighting token colors for solver DSL */
 .pict-fe-solver-code-editor-container .keyword { color: #9E6B47; font-weight: 600; }
-.pict-fe-solver-code-editor-container .string { color: #50A14F; }
-.pict-fe-solver-code-editor-container .number { color: #986801; }
-.pict-fe-solver-code-editor-container .property { color: #4078F2; }
-.pict-fe-solver-code-editor-container .operator { color: #0184BC; }
+.pict-fe-solver-code-editor-container .string { color: var(--theme-color-status-success, #50A14F); }
+.pict-fe-solver-code-editor-container .number { color: var(--theme-color-status-warning, #986801); }
+.pict-fe-solver-code-editor-container .property { color: var(--theme-color-brand-primary, #4078F2); }
+.pict-fe-solver-code-editor-container .operator { color: var(--theme-color-status-info, #0184BC); }
 .pict-fe-solver-modal-ordinal-row
 {
 	display: flex;
@@ -1894,8 +1894,8 @@ module.exports = (
 	border: 1px solid #E8E3DA;
 	border-radius: 3px;
 	font-size: 12px;
-	color: #3D3229;
-	background: #FFF;
+	color: var(--theme-color-text-primary, #3D3229);
+	background: var(--theme-color-background-panel, #FFF);
 	box-sizing: border-box;
 }
 .pict-fe-solver-modal-reference-search:focus
@@ -1911,7 +1911,7 @@ module.exports = (
 	overflow-y: auto;
 	border: 1px solid #E8E3DA;
 	border-radius: 4px;
-	background: #FDFCFA;
+	background: var(--theme-color-background-panel, #FDFCFA);
 }
 .pict-fe-solver-modal-reference-group
 {
@@ -1932,7 +1932,7 @@ module.exports = (
 	flex-direction: column;
 	padding: 5px 10px;
 	cursor: pointer;
-	border-bottom: 1px solid #F0ECE4;
+	border-bottom: 1px solid var(--theme-color-background-secondary, #F0ECE4);
 	transition: background 0.1s;
 }
 .pict-fe-solver-modal-reference-item:last-child
@@ -1954,7 +1954,7 @@ module.exports = (
 {
 	font-size: 12px;
 	font-weight: 600;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	min-width: 0;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -1991,8 +1991,8 @@ module.exports = (
 	padding: 4px 14px;
 	border: 1px solid #D4CFC6;
 	border-radius: 4px;
-	background: #FFF;
-	color: #3D3229;
+	background: var(--theme-color-background-panel, #FFF);
+	color: var(--theme-color-text-primary, #3D3229);
 	cursor: pointer;
 	font-weight: 500;
 	flex-shrink: 0;
@@ -2007,7 +2007,7 @@ module.exports = (
 .pict-fe-solver-modal-reference-insert-btn:hover
 {
 	background: #9E6B47;
-	color: #FFF;
+	color: var(--theme-color-background-panel, #FFF);
 	border-color: #9E6B47;
 }
 .pict-fe-solver-modal-reference-detail
@@ -2030,7 +2030,7 @@ module.exports = (
 {
 	font-family: monospace;
 	font-size: 11px;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	background: #FAF8F5;
 	border: 1px solid #E8E3DA;
 	border-radius: 3px;
@@ -2072,8 +2072,8 @@ module.exports = (
 	font-size: 13px;
 	font-weight: 500;
 	cursor: pointer;
-	background: #FFF;
-	color: #3D3229;
+	background: var(--theme-color-background-panel, #FFF);
+	color: var(--theme-color-text-primary, #3D3229);
 	transition: background 0.1s, border-color 0.1s;
 }
 .pict-fe-solver-modal-btn:hover
@@ -2084,7 +2084,7 @@ module.exports = (
 .pict-fe-solver-modal-btn-save
 {
 	background: #9E6B47;
-	color: #FFF;
+	color: var(--theme-color-background-panel, #FFF);
 	border-color: #9E6B47;
 }
 .pict-fe-solver-modal-btn-save:hover
@@ -2192,7 +2192,7 @@ module.exports = (
 	flex-wrap: wrap;
 	gap: 3px;
 	padding: 6px 8px;
-	background: #FDFCFA;
+	background: var(--theme-color-background-panel, #FDFCFA);
 	border: 1px solid #E8E3DA;
 	border-radius: 4px;
 	margin-bottom: 10px;
@@ -2212,17 +2212,17 @@ module.exports = (
 .pict-fe-solver-linter-token-constant
 {
 	background: #FDF6EC;
-	color: #986801;
+	color: var(--theme-color-status-warning, #986801);
 }
 .pict-fe-solver-linter-token-symbol
 {
 	background: #EEF3FF;
-	color: #4078F2;
+	color: var(--theme-color-brand-primary, #4078F2);
 }
 .pict-fe-solver-linter-token-operator
 {
 	background: #EAF5F8;
-	color: #0184BC;
+	color: var(--theme-color-status-info, #0184BC);
 	font-weight: 600;
 }
 .pict-fe-solver-linter-token-function
@@ -2234,7 +2234,7 @@ module.exports = (
 .pict-fe-solver-linter-token-string
 {
 	background: #EEF7EE;
-	color: #50A14F;
+	color: var(--theme-color-status-success, #50A14F);
 }
 .pict-fe-solver-linter-token-stateaddress
 {
@@ -2249,7 +2249,7 @@ module.exports = (
 }
 .pict-fe-solver-linter-token-parenthesis
 {
-	background: #F0ECE4;
+	background: var(--theme-color-background-secondary, #F0ECE4);
 	color: #8A7F72;
 	font-weight: 600;
 }
@@ -2269,8 +2269,8 @@ module.exports = (
 .pict-fe-solver-linter-message-error
 {
 	background: #FEF2F2;
-	color: #991B1B;
-	border-left: 3px solid #DC2626;
+	color: var(--theme-color-status-error, #991B1B);
+	border-left: 3px solid var(--theme-color-status-error, #DC2626);
 }
 .pict-fe-solver-linter-message-warning
 {
@@ -2345,7 +2345,7 @@ module.exports = (
 .pict-fe-solver-linter-descriptor
 {
 	padding: 8px 10px;
-	background: #FDFCFA;
+	background: var(--theme-color-background-panel, #FDFCFA);
 	border: 1px solid #E8E3DA;
 	border-radius: 4px;
 }
@@ -2364,13 +2364,13 @@ module.exports = (
 {
 	font-size: 12px;
 	font-weight: 600;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 }
 .pict-fe-solver-linter-descriptor-type
 {
 	font-size: 10px;
 	font-weight: 600;
-	color: #fff;
+	color: var(--theme-color-background-panel, #fff);
 	background: #9E6B47;
 	padding: 1px 6px;
 	border-radius: 3px;
@@ -2429,8 +2429,8 @@ module.exports = (
 	border-radius: 3px;
 	font-size: 12px;
 	font-family: inherit;
-	color: #3D3229;
-	background: #FFF;
+	color: var(--theme-color-text-primary, #3D3229);
+	background: var(--theme-color-background-panel, #FFF);
 	box-sizing: border-box;
 	cursor: text;
 }
@@ -2454,7 +2454,7 @@ module.exports = (
 	top: 100%;
 	max-height: 260px;
 	overflow-y: auto;
-	background: #FFF;
+	background: var(--theme-color-background-panel, #FFF);
 	border: 1px solid #D4CFC6;
 	border-radius: 0 0 5px 5px;
 	box-shadow: 0 6px 16px rgba(61, 50, 41, 0.12);
@@ -2482,7 +2482,7 @@ module.exports = (
 	font-weight: 600;
 	letter-spacing: 0.3px;
 	color: #8A7F72;
-	background: #FDFCFA;
+	background: var(--theme-color-background-panel, #FDFCFA);
 }
 .pict-fe-searchable-selector-item-indented
 {
@@ -2492,7 +2492,7 @@ module.exports = (
 {
 	padding: 5px 10px;
 	font-size: 12px;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	cursor: pointer;
 	transition: background 0.08s;
 	white-space: nowrap;
@@ -2591,8 +2591,8 @@ module.exports = (
 	padding: 3px 6px;
 	border: 1px solid #D4CFC6;
 	border-radius: 3px;
-	background: #FFF;
-	color: #3D3229;
+	background: var(--theme-color-background-panel, #FFF);
+	color: var(--theme-color-text-primary, #3D3229);
 	width: 30%;
 	min-width: 60px;
 	flex-shrink: 0;
@@ -2603,8 +2603,8 @@ module.exports = (
 	padding: 3px 6px;
 	border: 1px solid #D4CFC6;
 	border-radius: 3px;
-	background: #FFF;
-	color: #3D3229;
+	background: var(--theme-color-background-panel, #FFF);
+	color: var(--theme-color-text-primary, #3D3229);
 	flex: 1;
 	min-width: 0;
 }
@@ -2645,13 +2645,13 @@ module.exports = (
 }
 .pict-fe-option-remove:hover
 {
-	background: #F0ECE4;
+	background: var(--theme-color-background-secondary, #F0ECE4);
 	color: #C0392B;
 }
 .pict-fe-option-remove-armed
 {
 	background: #C0392B !important;
-	color: #FFF !important;
+	color: var(--theme-color-background-panel, #FFF) !important;
 	opacity: 1 !important;
 	font-size: 10px;
 	padding: 2px 6px;
@@ -2694,7 +2694,7 @@ module.exports = (
 	align-items: center;
 	gap: 3px;
 	font-size: 12px;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	cursor: pointer;
 }
 .pict-fe-option-source-radio input[type="radio"]
@@ -2744,7 +2744,7 @@ module.exports = (
 {
 	font-size: 13px;
 	font-weight: 500;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	flex: 1;
 	min-width: 0;
 	overflow: hidden;
@@ -2790,7 +2790,7 @@ module.exports = (
 .pict-fe-named-list-delete-btn-armed
 {
 	background: #C0392B !important;
-	color: #FFF !important;
+	color: var(--theme-color-background-panel, #FFF) !important;
 	border-color: #C0392B !important;
 }
 .pict-fe-named-list-add-btn
@@ -2862,7 +2862,7 @@ module.exports = (
 {
 	font-size: 13px;
 	font-weight: 500;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	flex: 1;
 	min-width: 0;
 	overflow: hidden;
@@ -2884,7 +2884,7 @@ module.exports = (
 	border: 1px solid #E8E3DA;
 	border-radius: 4px;
 	margin-bottom: 4px;
-	background: #FDFCFA;
+	background: var(--theme-color-background-panel, #FDFCFA);
 	cursor: grab;
 	transition: background 0.1s, box-shadow 0.1s;
 }
@@ -2909,7 +2909,7 @@ module.exports = (
 {
 	font-size: 12px;
 	font-weight: 500;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	flex: 1;
 	min-width: 0;
 	overflow: hidden;
@@ -2940,7 +2940,7 @@ module.exports = (
 .pict-fe-provider-remove-armed
 {
 	background: #C0392B !important;
-	color: #FFF !important;
+	color: var(--theme-color-background-panel, #FFF) !important;
 	font-size: 10px;
 	font-weight: 600;
 }
@@ -3006,11 +3006,11 @@ module.exports = (
 	align-items: center;
 	gap: 8px;
 	padding: 8px 12px;
-	background: #FFF;
+	background: var(--theme-color-background-panel, #FFF);
 	cursor: pointer;
 	font-size: 12px;
 	font-weight: 500;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	transition: background 0.15s;
 }
 .pict-fe-solvers-health-issue-header:hover
@@ -3028,19 +3028,19 @@ module.exports = (
 	border-radius: 9px;
 	font-size: 10px;
 	font-weight: 700;
-	color: #FFF;
+	color: var(--theme-color-background-panel, #FFF);
 }
 .pict-fe-solvers-health-issue-items
 {
 	padding: 6px 12px 10px 12px;
 	border-top: 1px solid #E8E3DA;
-	background: #FDFCFA;
+	background: var(--theme-color-background-panel, #FDFCFA);
 }
 .pict-fe-solvers-health-issue-item
 {
 	font-family: monospace;
 	font-size: 11px;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	background: #FAF8F5;
 	border: 1px solid #E8E3DA;
 	border-radius: 3px;
@@ -3088,7 +3088,7 @@ module.exports = (
 	margin-bottom: 4px;
 	border: 1px solid #E8E3DA;
 	border-radius: 4px;
-	background: #FDFCFA;
+	background: var(--theme-color-background-panel, #FDFCFA);
 	transition: border-color 0.15s;
 }
 .pict-fe-solvers-seq-entry:hover
@@ -3134,7 +3134,7 @@ module.exports = (
 	border: 1px solid #E8E3DA;
 	border-radius: 5px;
 	margin-bottom: 8px;
-	background: #FDFCFA;
+	background: var(--theme-color-background-panel, #FDFCFA);
 	overflow: hidden;
 }
 .pict-fe-solvers-flow-hash
@@ -3142,7 +3142,7 @@ module.exports = (
 	font-family: monospace;
 	font-size: 12px;
 	font-weight: 700;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	padding: 8px 12px;
 	background: #F5F0E8;
 	border-bottom: 1px solid #E8E3DA;
@@ -3223,7 +3223,7 @@ module.exports = (
 .pict-fe-solver-editor-breadcrumb-current
 {
 	font-weight: 600;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	padding: 2px 4px;
 	max-width: 280px;
 	overflow: hidden;
@@ -3239,7 +3239,7 @@ module.exports = (
 	margin-bottom: 10px;
 	border-bottom: 1px solid #E8E3DA;
 	font-size: 12px;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 }
 .pict-fe-solver-editor-header-context
 {
@@ -3261,7 +3261,7 @@ module.exports = (
 	gap: 8px;
 	padding: 10px 16px;
 	border-top: 1px solid #E8E3DA;
-	background: #FDFCFA;
+	background: var(--theme-color-background-panel, #FDFCFA);
 	position: sticky;
 	bottom: -16px;
 	margin: 0 -16px -16px -16px;
@@ -3271,7 +3271,7 @@ module.exports = (
 {
 	font-size: 12px;
 	font-weight: 600;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	margin-bottom: 8px;
 }
 .pict-fe-solver-editor-list-empty
@@ -3295,8 +3295,8 @@ module.exports = (
 	padding: 5px 8px;
 	border: 1px solid #D4CFC6;
 	border-radius: 4px;
-	background: #FFF;
-	color: #3D3229;
+	background: var(--theme-color-background-panel, #FFF);
+	color: var(--theme-color-text-primary, #3D3229);
 	font-size: 12px;
 	font-family: inherit;
 }
@@ -3324,7 +3324,7 @@ module.exports = (
 	margin: 0;
 	font-size: 15px;
 	font-weight: 600;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 }
 .pict-fe-import-description
 {
@@ -3342,7 +3342,7 @@ module.exports = (
 	min-height: 200px;
 	border: 2px dashed #D4C4A8;
 	border-radius: 8px;
-	background: #FDFCFA;
+	background: var(--theme-color-background-panel, #FDFCFA);
 	cursor: pointer;
 	transition: border-color 0.15s, background 0.15s;
 }
@@ -3378,7 +3378,7 @@ module.exports = (
 {
 	font-size: 16px;
 	font-weight: 600;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 }
 .pict-fe-import-dropzone-subtext
 {
@@ -3435,8 +3435,8 @@ module.exports = (
 	padding: 8px 16px;
 	border: 1px solid #D4C4A8;
 	border-radius: 6px;
-	background: #FDFCFA;
-	color: #3D3229;
+	background: var(--theme-color-background-panel, #FDFCFA);
+	color: var(--theme-color-text-primary, #3D3229);
 	font-size: 13px;
 	font-weight: 600;
 	cursor: pointer;
@@ -3502,12 +3502,12 @@ module.exports = (
 .pict-fe-toast-success
 {
 	background: #2E7D32;
-	color: #fff;
+	color: var(--theme-color-background-panel, #fff);
 }
 .pict-fe-toast-error
 {
 	background: #C62828;
-	color: #fff;
+	color: var(--theme-color-background-panel, #fff);
 }
 
 /* ---- Preview Tab ---- */
@@ -3532,7 +3532,7 @@ module.exports = (
 	font-size: 11px;
 	font-weight: 600;
 	font-family: inherit;
-	color: #FDFCFA;
+	color: var(--theme-color-background-panel, #FDFCFA);
 	background: #9E6B47;
 	border: none;
 	border-radius: 4px;
@@ -3556,7 +3556,7 @@ module.exports = (
 	overflow: auto;
 	border: 1px solid #E8E3DA;
 	border-radius: 4px;
-	background: #FFFFFF;
+	background: var(--theme-color-background-panel, #FFFFFF);
 	padding: 12px;
 }
 .pict-fe-preview-placeholder
@@ -3578,7 +3578,7 @@ module.exports = (
 .pict-fe-preview-error
 {
 	font-size: 12px;
-	color: #991B1B;
+	color: var(--theme-color-status-error, #991B1B);
 	background: #FEF2F2;
 	border: 1px solid #FCA5A5;
 	border-radius: 4px;
@@ -3667,7 +3667,7 @@ module.exports = (
 .pict-fe-help-body .pict-content pre
 {
 	background: #F5F0E8 !important;
-	color: #3D3229 !important;
+	color: var(--theme-color-text-primary, #3D3229) !important;
 	padding: 10px 16px !important;
 	border-radius: 4px !important;
 	overflow-x: auto !important;
@@ -3679,7 +3679,7 @@ module.exports = (
 .pict-fe-help-body .pict-content-code-wrap pre
 {
 	background: #F5F0E8 !important;
-	color: #3D3229 !important;
+	color: var(--theme-color-text-primary, #3D3229) !important;
 	padding: 10px 16px 10px 56px !important;
 	border-radius: 4px !important;
 	overflow-x: auto !important;
@@ -3721,25 +3721,25 @@ module.exports = (
 .pict-fe-help-body .pict-content .pict-content-code-wrap .keyword,
 .pict-fe-help-body .pict-content-code-wrap .keyword { color: #A626A4 !important; }
 .pict-fe-help-body .pict-content .pict-content-code-wrap .string,
-.pict-fe-help-body .pict-content-code-wrap .string { color: #50A14F !important; }
+.pict-fe-help-body .pict-content-code-wrap .string { color: var(--theme-color-status-success, #50A14F) !important; }
 .pict-fe-help-body .pict-content .pict-content-code-wrap .number,
-.pict-fe-help-body .pict-content-code-wrap .number { color: #986801 !important; }
+.pict-fe-help-body .pict-content-code-wrap .number { color: var(--theme-color-status-warning, #986801) !important; }
 .pict-fe-help-body .pict-content .pict-content-code-wrap .comment,
 .pict-fe-help-body .pict-content-code-wrap .comment { color: #A0A1A7 !important; font-style: italic !important; }
 .pict-fe-help-body .pict-content .pict-content-code-wrap .operator,
-.pict-fe-help-body .pict-content-code-wrap .operator { color: #0184BC !important; }
+.pict-fe-help-body .pict-content-code-wrap .operator { color: var(--theme-color-status-info, #0184BC) !important; }
 .pict-fe-help-body .pict-content .pict-content-code-wrap .punctuation,
-.pict-fe-help-body .pict-content-code-wrap .punctuation { color: #3D3229 !important; }
+.pict-fe-help-body .pict-content-code-wrap .punctuation { color: var(--theme-color-text-primary, #3D3229) !important; }
 .pict-fe-help-body .pict-content .pict-content-code-wrap .function-name,
-.pict-fe-help-body .pict-content-code-wrap .function-name { color: #4078F2 !important; }
+.pict-fe-help-body .pict-content-code-wrap .function-name { color: var(--theme-color-brand-primary, #4078F2) !important; }
 .pict-fe-help-body .pict-content .pict-content-code-wrap .property,
-.pict-fe-help-body .pict-content-code-wrap .property { color: #E45649 !important; }
+.pict-fe-help-body .pict-content-code-wrap .property { color: var(--theme-color-status-error, #E45649) !important; }
 .pict-fe-help-body .pict-content .pict-content-code-wrap .tag,
-.pict-fe-help-body .pict-content-code-wrap .tag { color: #E45649 !important; }
+.pict-fe-help-body .pict-content-code-wrap .tag { color: var(--theme-color-status-error, #E45649) !important; }
 .pict-fe-help-body .pict-content .pict-content-code-wrap .attr-name,
-.pict-fe-help-body .pict-content-code-wrap .attr-name { color: #986801 !important; }
+.pict-fe-help-body .pict-content-code-wrap .attr-name { color: var(--theme-color-status-warning, #986801) !important; }
 .pict-fe-help-body .pict-content .pict-content-code-wrap .attr-value,
-.pict-fe-help-body .pict-content-code-wrap .attr-value { color: #50A14F !important; }
+.pict-fe-help-body .pict-content-code-wrap .attr-value { color: var(--theme-color-status-success, #50A14F) !important; }
 
 /* ---- JSON Tab Header ---- */
 .pict-fe-json-header
@@ -3748,7 +3748,7 @@ module.exports = (
 	align-items: center;
 	padding: 6px 12px;
 	border-bottom: 1px solid #E8E0D4;
-	background: #FDFCFA;
+	background: var(--theme-color-background-panel, #FDFCFA);
 }
 .pict-fe-json-readonly-label
 {
@@ -3756,7 +3756,7 @@ module.exports = (
 	align-items: center;
 	gap: 6px;
 	font-size: 12px;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 	cursor: pointer;
 	user-select: none;
 }
@@ -3778,7 +3778,7 @@ module.exports = (
 {
 	font-size: 15px;
 	font-weight: 600;
-	color: #3D3229;
+	color: var(--theme-color-text-primary, #3D3229);
 }
 .pict-fe-overview-labels
 {
@@ -3873,8 +3873,8 @@ module.exports = (
 	border-radius: 3px;
 	font-size: 12px;
 	font-family: inherit;
-	color: #3D3229;
-	background: #FFF;
+	color: var(--theme-color-text-primary, #3D3229);
+	background: var(--theme-color-background-panel, #FFF);
 	box-sizing: border-box;
 	transition: border-color 0.15s, box-shadow 0.15s;
 	min-width: 0;

@@ -57,8 +57,8 @@ class FormEditorFlexExampleApplication extends libPictApplication
 	position: relative;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 	font-size: 14px;
-	color: #3D3229;
-	background: #FDFCFA;
+	color: var(--theme-color-text-primary, #3D3229);
+	background: var(--theme-color-background-panel, #FDFCFA);
 	border: 1px solid #E8E3DA;
 	border-radius: 6px;
 	display: flex;

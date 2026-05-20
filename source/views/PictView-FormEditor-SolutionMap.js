@@ -527,11 +527,11 @@ class PictViewFormEditorSolutionMap extends libPictView
 				{ Direction: 'input', Side: 'left', Label: 'In' },
 				{ Direction: 'output', Side: 'right', Label: 'Out' }
 			],
-			TitleBarColor: '#5A7F9E',
+			TitleBarColor: 'var(--theme-color-status-info, #5A7F9E)',
 			BodyStyle:
 			{
-				fill: '#F5F0E8',
-				stroke: '#B0A89E'
+				fill: 'var(--theme-color-background-secondary, #F5F0E8)',
+				stroke: 'var(--theme-color-text-muted, #B0A89E)'
 			},
 			BodyContent:
 			{
@@ -693,7 +693,7 @@ class PictViewFormEditorSolutionMap extends libPictView
 .pict-fe-solutionmap-card-expr {
 	font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
 	font-size: 10px;
-	color: #5A4A3A;
+	color: var(--theme-color-text-primary, #5A4A3A);
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -704,11 +704,11 @@ class PictViewFormEditorSolutionMap extends libPictView
 	display: flex;
 	gap: 8px;
 	font-size: 10px;
-	color: #8A7A6A;
+	color: var(--theme-color-text-secondary, #8A7A6A);
 }
 .pict-fe-solutionmap-card-ordinal {
 	font-weight: 600;
-	color: #D4A373;
+	color: var(--theme-color-status-warning, #D4A373);
 }
 .pict-fe-solutionmap-card-type {
 	font-style: italic;
@@ -726,8 +726,8 @@ class PictViewFormEditorSolutionMap extends libPictView
 .pict-fe-solutionmap-tooltip-expr {
 	font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
 	font-size: 11px;
-	color: #5A4A3A;
-	background: #F5F0E8;
+	color: var(--theme-color-text-primary, #5A4A3A);
+	background: var(--theme-color-background-secondary, #F5F0E8);
 	padding: 4px 6px;
 	border-radius: 3px;
 	margin-bottom: 6px;
@@ -738,7 +738,7 @@ class PictViewFormEditorSolutionMap extends libPictView
 	display: flex;
 	gap: 12px;
 	font-size: 11px;
-	color: #8A7A6A;
+	color: var(--theme-color-text-secondary, #8A7A6A);
 }
 `;
 	}

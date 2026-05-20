@@ -1,6 +1,6 @@
 {
     "name": "pict-section-formeditor",
-    "version": "1.0.14",
+    "version": "1.0.15",
     "description": "Pict visual editor for pict-section-form configurations",
     "main": "source/Pict-Section-FormEditor.js",
     "scripts": {
@@ -24,18 +24,18 @@
     },
     "homepage": "https://github.com/stevenvelozo/pict-section-formeditor#readme",
     "dependencies": {
-        "pict-section-code": "^1.0.10",
-        "pict-section-content": "^1.0.1",
-        "pict-section-flow": "^0.0.19",
+        "pict-section-code": "^1.0.11",
+        "pict-section-content": "^1.0.2",
+        "pict-section-flow": "^1.0.0",
         "pict-section-form": "^1.0.196",
         "pict-section-markdowneditor": "^1.0.15",
-        "pict-section-modal": "^1.0.1",
-        "pict-section-objecteditor": "^1.0.1",
+        "pict-section-modal": "^1.1.1",
+        "pict-section-objecteditor": "^1.0.3",
         "pict-view": "^1.0.68"
     },
     "devDependencies": {
-        "pict": "^1.0.368",
-        "pict-docuserve": "^1.0.1",
+        "pict": "^1.0.369",
+        "pict-docuserve": "^1.3.2",
         "quackage": "^1.2.3"
     },
     "mocha": {

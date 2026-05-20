@@ -493,33 +493,33 @@ class PictViewFormEditorPropertiesPanel extends libPictView
 		tmpHTML += '<div class="pict-fe-form-dashboard-heading">Overview</div>';
 		tmpHTML += '<div class="pict-fe-stats-grid">';
 
-		tmpHTML += '<div class="pict-fe-stats-card" style="border-left:3px solid #D4A373">';
-		tmpHTML += `<div class="pict-fe-stats-value" style="color:#D4A373">${tmpStats.Sections}</div>`;
+		tmpHTML += '<div class="pict-fe-stats-card" style="border-left:3px solid var(--theme-color-status-warning, #D4A373)">';
+		tmpHTML += `<div class="pict-fe-stats-value" style="color:var(--theme-color-status-warning, #D4A373)">${tmpStats.Sections}</div>`;
 		tmpHTML += '<div class="pict-fe-stats-label">Sections</div>';
 		tmpHTML += '</div>';
 
-		tmpHTML += '<div class="pict-fe-stats-card" style="border-left:3px solid #9E6B47">';
-		tmpHTML += `<div class="pict-fe-stats-value" style="color:#9E6B47">${tmpStats.Groups}</div>`;
+		tmpHTML += '<div class="pict-fe-stats-card" style="border-left:3px solid var(--theme-color-brand-primary, #9E6B47)">';
+		tmpHTML += `<div class="pict-fe-stats-value" style="color:var(--theme-color-brand-primary, #9E6B47)">${tmpStats.Groups}</div>`;
 		tmpHTML += '<div class="pict-fe-stats-label">Groups</div>';
 		tmpHTML += '</div>';
 
-		tmpHTML += '<div class="pict-fe-stats-card" style="border-left:3px solid #E76F51">';
-		tmpHTML += `<div class="pict-fe-stats-value" style="color:#E76F51">${tmpStats.Inputs}</div>`;
+		tmpHTML += '<div class="pict-fe-stats-card" style="border-left:3px solid var(--theme-color-status-warning, #E76F51)">';
+		tmpHTML += `<div class="pict-fe-stats-value" style="color:var(--theme-color-status-warning, #E76F51)">${tmpStats.Inputs}</div>`;
 		tmpHTML += '<div class="pict-fe-stats-label">Inputs</div>';
 		tmpHTML += '</div>';
 
-		tmpHTML += '<div class="pict-fe-stats-card" style="border-left:3px solid #5A7F9E">';
-		tmpHTML += `<div class="pict-fe-stats-value" style="color:#5A7F9E">${tmpStats.Descriptors}</div>`;
+		tmpHTML += '<div class="pict-fe-stats-card" style="border-left:3px solid var(--theme-color-status-info, #5A7F9E)">';
+		tmpHTML += `<div class="pict-fe-stats-value" style="color:var(--theme-color-status-info, #5A7F9E)">${tmpStats.Descriptors}</div>`;
 		tmpHTML += '<div class="pict-fe-stats-label">Descriptors</div>';
 		tmpHTML += '</div>';
 
-		tmpHTML += '<div class="pict-fe-stats-card" style="border-left:3px solid #6B8F5A">';
-		tmpHTML += `<div class="pict-fe-stats-value" style="color:#6B8F5A">${tmpStats.ReferenceManifests}</div>`;
+		tmpHTML += '<div class="pict-fe-stats-card" style="border-left:3px solid var(--theme-color-status-success, #6B8F5A)">';
+		tmpHTML += `<div class="pict-fe-stats-value" style="color:var(--theme-color-status-success, #6B8F5A)">${tmpStats.ReferenceManifests}</div>`;
 		tmpHTML += '<div class="pict-fe-stats-label">Ref Manifests</div>';
 		tmpHTML += '</div>';
 
-		tmpHTML += '<div class="pict-fe-stats-card" style="border-left:3px solid #B07BAC">';
-		tmpHTML += `<div class="pict-fe-stats-value" style="color:#B07BAC">${tmpStats.TabularColumns}</div>`;
+		tmpHTML += '<div class="pict-fe-stats-card" style="border-left:3px solid var(--theme-color-brand-accent, #B07BAC)">';
+		tmpHTML += `<div class="pict-fe-stats-value" style="color:var(--theme-color-brand-accent, #B07BAC)">${tmpStats.TabularColumns}</div>`;
 		tmpHTML += '<div class="pict-fe-stats-label">Tabular Cols</div>';
 		tmpHTML += '</div>';
 
@@ -533,7 +533,24 @@ class PictViewFormEditorPropertiesPanel extends libPictView
 			tmpHTML += '<div class="pict-fe-histogram">';
 			// Sort by count descending
 			tmpDataTypeKeys.sort(function(a, b) { return tmpStats.DataTypes[b] - tmpStats.DataTypes[a]; });
-			let tmpDataTypeColors = ['#D4A373', '#9E6B47', '#E76F51', '#6B8F5A', '#5A7F9E', '#B07BAC', '#C4965A', '#7B9E6B', '#8F6B5A', '#5A8F8F', '#C47B5A', '#7B6BC4'];
+			// Categorical palette — first 6 are status/brand-derived, remaining
+			// 6 come from the theme's --theme-color-data-N series (defined per
+			// theme in pict-section-theme's catalog). Each var() falls back to
+			// a hex when the active theme doesn't define that data token.
+			let tmpDataTypeColors = [
+				'var(--theme-color-status-warning, #D4A373)',
+				'var(--theme-color-brand-primary, #9E6B47)',
+				'var(--theme-color-status-warning, #E76F51)',
+				'var(--theme-color-status-success, #6B8F5A)',
+				'var(--theme-color-status-info, #5A7F9E)',
+				'var(--theme-color-brand-accent, #B07BAC)',
+				'var(--theme-color-data-1, #3357C7)',
+				'var(--theme-color-data-2, #C75033)',
+				'var(--theme-color-data-3, #2E7A3A)',
+				'var(--theme-color-data-4, #A86B00)',
+				'var(--theme-color-data-5, #6B3AAC)',
+				'var(--theme-color-data-6, #1F6FB5)'
+			];
 			for (let i = 0; i < tmpDataTypeKeys.length; i++)
 			{
 				let tmpType = tmpDataTypeKeys[i];
@@ -558,7 +575,22 @@ class PictViewFormEditorPropertiesPanel extends libPictView
 			tmpHTML += '<div class="pict-fe-histogram">';
 			// Sort by count descending
 			tmpInputTypeKeys.sort(function(a, b) { return tmpStats.InputTypes[b] - tmpStats.InputTypes[a]; });
-			let tmpInputTypeColors = ['#5A7F9E', '#9E6B47', '#6B8F5A', '#E76F51', '#B07BAC', '#D4A373', '#8F6B5A', '#7B9E6B', '#C4965A', '#5A8F8F', '#7B6BC4', '#C47B5A'];
+			let tmpInputTypeColors = [
+				'var(--theme-color-status-info, #5A7F9E)',
+				'var(--theme-color-brand-primary, #9E6B47)',
+				'var(--theme-color-status-success, #6B8F5A)',
+				'var(--theme-color-status-warning, #E76F51)',
+				'var(--theme-color-brand-accent, #B07BAC)',
+				'var(--theme-color-status-warning, #D4A373)',
+				// Shifted offset vs DataType palette so two adjacent histograms
+				// (DataType + InputType for the same form) don't visually collide.
+				'var(--theme-color-data-5, #6B3AAC)',
+				'var(--theme-color-data-6, #1F6FB5)',
+				'var(--theme-color-data-1, #3357C7)',
+				'var(--theme-color-data-7, #C63A8E)',
+				'var(--theme-color-data-2, #C75033)',
+				'var(--theme-color-data-4, #A86B00)'
+			];
 			for (let i = 0; i < tmpInputTypeKeys.length; i++)
 			{
 				let tmpType = tmpInputTypeKeys[i];
@@ -5899,18 +5931,18 @@ class PictViewFormEditorPropertiesPanel extends libPictView
 		tmpHTML += '<div class="pict-fe-form-dashboard-heading">Solver Overview</div>';
 		tmpHTML += '<div class="pict-fe-stats-grid">';
 
-		tmpHTML += '<div class="pict-fe-stats-card" style="border-left:3px solid #9E6B47">';
-		tmpHTML += `<div class="pict-fe-stats-value" style="color:#9E6B47">${pHealthReport.TotalSolvers}</div>`;
+		tmpHTML += '<div class="pict-fe-stats-card" style="border-left:3px solid var(--theme-color-brand-primary, #9E6B47)">';
+		tmpHTML += `<div class="pict-fe-stats-value" style="color:var(--theme-color-brand-primary, #9E6B47)">${pHealthReport.TotalSolvers}</div>`;
 		tmpHTML += '<div class="pict-fe-stats-label">Total Solvers</div>';
 		tmpHTML += '</div>';
 
-		tmpHTML += '<div class="pict-fe-stats-card" style="border-left:3px solid #D4A373">';
-		tmpHTML += `<div class="pict-fe-stats-value" style="color:#D4A373">${pHealthReport.SectionSolvers}</div>`;
+		tmpHTML += '<div class="pict-fe-stats-card" style="border-left:3px solid var(--theme-color-status-warning, #D4A373)">';
+		tmpHTML += `<div class="pict-fe-stats-value" style="color:var(--theme-color-status-warning, #D4A373)">${pHealthReport.SectionSolvers}</div>`;
 		tmpHTML += '<div class="pict-fe-stats-label">Section Solvers</div>';
 		tmpHTML += '</div>';
 
-		tmpHTML += '<div class="pict-fe-stats-card" style="border-left:3px solid #5A7F9E">';
-		tmpHTML += `<div class="pict-fe-stats-value" style="color:#5A7F9E">${pHealthReport.GroupSolvers}</div>`;
+		tmpHTML += '<div class="pict-fe-stats-card" style="border-left:3px solid var(--theme-color-status-info, #5A7F9E)">';
+		tmpHTML += `<div class="pict-fe-stats-value" style="color:var(--theme-color-status-info, #5A7F9E)">${pHealthReport.GroupSolvers}</div>`;
 		tmpHTML += '<div class="pict-fe-stats-label">Group Solvers</div>';
 		tmpHTML += '</div>';
 
@@ -5937,9 +5969,9 @@ class PictViewFormEditorPropertiesPanel extends libPictView
 		// Circular References
 		if (pHealthReport.CircularReferences.length > 0)
 		{
-			tmpHTML += '<div class="pict-fe-solvers-health-issue" style="border-left:3px solid #A04040">';
+			tmpHTML += '<div class="pict-fe-solvers-health-issue" style="border-left:3px solid var(--theme-color-status-error, #A04040)">';
 			tmpHTML += '<div class="pict-fe-solvers-health-issue-header">';
-			tmpHTML += `<span class="pict-fe-solvers-health-issue-count" style="background:#A04040">${pHealthReport.CircularReferences.length}</span>`;
+			tmpHTML += `<span class="pict-fe-solvers-health-issue-count" style="background:var(--theme-color-status-error, #A04040)">${pHealthReport.CircularReferences.length}</span>`;
 			tmpHTML += 'Circular References';
 			tmpHTML += '</div>';
 			tmpHTML += '<div class="pict-fe-solvers-health-issue-items">';
@@ -5955,9 +5987,9 @@ class PictViewFormEditorPropertiesPanel extends libPictView
 		// Duplicate Assignments
 		if (pHealthReport.DuplicateAssignments.length > 0)
 		{
-			tmpHTML += '<div class="pict-fe-solvers-health-issue" style="border-left:3px solid #E76F51">';
+			tmpHTML += '<div class="pict-fe-solvers-health-issue" style="border-left:3px solid var(--theme-color-status-warning, #E76F51)">';
 			tmpHTML += '<div class="pict-fe-solvers-health-issue-header">';
-			tmpHTML += `<span class="pict-fe-solvers-health-issue-count" style="background:#E76F51">${pHealthReport.DuplicateAssignments.length}</span>`;
+			tmpHTML += `<span class="pict-fe-solvers-health-issue-count" style="background:var(--theme-color-status-warning, #E76F51)">${pHealthReport.DuplicateAssignments.length}</span>`;
 			tmpHTML += 'Duplicate Assignments';
 			tmpHTML += '</div>';
 			tmpHTML += '<div class="pict-fe-solvers-health-issue-items">';
@@ -5979,9 +6011,9 @@ class PictViewFormEditorPropertiesPanel extends libPictView
 		// No-Hash Expressions
 		if (pHealthReport.NoHashExpressions.length > 0)
 		{
-			tmpHTML += '<div class="pict-fe-solvers-health-issue" style="border-left:3px solid #D4A373">';
+			tmpHTML += '<div class="pict-fe-solvers-health-issue" style="border-left:3px solid var(--theme-color-status-warning, #D4A373)">';
 			tmpHTML += '<div class="pict-fe-solvers-health-issue-header">';
-			tmpHTML += `<span class="pict-fe-solvers-health-issue-count" style="background:#D4A373">${pHealthReport.NoHashExpressions.length}</span>`;
+			tmpHTML += `<span class="pict-fe-solvers-health-issue-count" style="background:var(--theme-color-status-warning, #D4A373)">${pHealthReport.NoHashExpressions.length}</span>`;
 			tmpHTML += 'No Descriptor References';
 			tmpHTML += '</div>';
 			tmpHTML += '<div class="pict-fe-solvers-health-issue-items">';
@@ -6010,9 +6042,9 @@ class PictViewFormEditorPropertiesPanel extends libPictView
 				}
 			}
 
-			tmpHTML += '<div class="pict-fe-solvers-health-issue" style="border-left:3px solid #8A7F72">';
+			tmpHTML += '<div class="pict-fe-solvers-health-issue" style="border-left:3px solid var(--theme-color-text-secondary, #8A7F72)">';
 			tmpHTML += '<div class="pict-fe-solvers-health-issue-header">';
-			tmpHTML += `<span class="pict-fe-solvers-health-issue-count" style="background:#8A7F72">${tmpUniqueUnresolved.length}</span>`;
+			tmpHTML += `<span class="pict-fe-solvers-health-issue-count" style="background:var(--theme-color-text-secondary, #8A7F72)">${tmpUniqueUnresolved.length}</span>`;
 			tmpHTML += 'Unresolved Tokens';
 			tmpHTML += '</div>';
 			tmpHTML += '<div class="pict-fe-solvers-health-issue-items">';
@@ -6045,7 +6077,7 @@ class PictViewFormEditorPropertiesPanel extends libPictView
 
 		if (pHealthReport.AllExpressions.length === 0)
 		{
-			tmpHTML += '<div style="font-size:12px;color:#8A7F72;padding:8px 0;">No solver expressions defined.</div>';
+			tmpHTML += '<div style="font-size:12px;color:var(--theme-color-text-secondary, #8A7F72);padding:8px 0;">No solver expressions defined.</div>';
 			return tmpHTML;
 		}
 
@@ -6115,7 +6147,7 @@ class PictViewFormEditorPropertiesPanel extends libPictView
 		let tmpSolverMapKeys = Object.keys(pHealthReport.SolverMap);
 		if (tmpSolverMapKeys.length === 0)
 		{
-			tmpHTML += '<div style="font-size:12px;color:#8A7F72;padding:8px 0;">No solver data flow to display.</div>';
+			tmpHTML += '<div style="font-size:12px;color:var(--theme-color-text-secondary, #8A7F72);padding:8px 0;">No solver data flow to display.</div>';
 			return tmpHTML;
 		}
 

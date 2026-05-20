@@ -265,9 +265,9 @@ class FormEditorDocumentation extends libPictProvider
 	 */
 	_renderError(pPath, pStatus)
 	{
-		let tmpHTML = '<div style="padding: 20px; color: #8A7F72; text-align: center;">';
+		let tmpHTML = '<div style="padding: 20px; color: var(--theme-color-text-secondary, #8A7F72); text-align: center;">';
 		tmpHTML += '<p>Could not load article.</p>';
-		tmpHTML += `<p style="font-size: 12px; color: #B0A89E;">${pPath} (HTTP ${pStatus})</p>`;
+		tmpHTML += `<p style="font-size: 12px; color: var(--theme-color-text-muted, #B0A89E);">${pPath} (HTTP ${pStatus})</p>`;
 		tmpHTML += '</div>';
 
 		let tmpContentView = this._ParentFormEditor._HelpContentView;

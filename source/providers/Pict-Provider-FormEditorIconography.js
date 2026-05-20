@@ -38,11 +38,11 @@ const _DefaultProviderConfiguration = (
 		// Primary stroke/fill for structural icons
 		Primary: '#3D3229',
 		// Secondary stroke for accents
-		Accent: '#9E6B47',
+		Accent: 'var(--theme-color-brand-primary, #9E6B47)',
 		// Muted color for subtle elements
-		Muted: '#B0A89E',
+		Muted: 'var(--theme-color-text-muted, #B0A89E)',
 		// Lighter fill for backgrounds inside icons
-		Fill: '#F5F0E8'
+		Fill: 'var(--theme-color-background-secondary, #F5F0E8)'
 	}
 });
 
@@ -802,7 +802,7 @@ class PictProviderFormEditorIconography
 			return _svg(pSize,
 				'<circle cx="12" cy="12" r="9" fill="' + pColors.Fill + '" stroke="' + pColors.Primary + '" stroke-width="' + pSW + '"/>' +
 				'<circle cx="12" cy="8" r="2.5" fill="' + pColors.Accent + '"/>' +
-				'<circle cx="8.5" cy="14" r="2.5" fill="#6B7F5A"/>' +
+				'<circle cx="8.5" cy="14" r="2.5" fill="var(--theme-color-status-success, #6B7F5A)"/>' +
 				'<circle cx="15.5" cy="14" r="2.5" fill="#5A6B7F"/>');
 		};
 

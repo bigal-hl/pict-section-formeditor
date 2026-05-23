@@ -10,3 +10,10 @@
 
 [Get Started](#/README)
 [View on GitHub](https://github.com/stevenvelozo/pict-section-formeditor)
+
+<!-- docuserve:examples:start -->
+| Example | Complexity | Launch |
+|---------|------------|--------|
+| [Form Editor](examples/form%5Feditor/README.md) | Intermediate | [&#9654; Launch](examples/form%5Feditor/index.html) |
+| [Form Editor (Flex Height)](examples/form%5Feditor%5Fflex/README.md) | Advanced | [&#9654; Launch](examples/form%5Feditor%5Fflex/index.html) |
+<!-- docuserve:examples:end -->

@@ -31,6 +31,10 @@
 	- [Solver Expressions Advanced Topics](user-docs/Solver-Expressions-Advanced.md)
 	- [Solver Functions Reference](user-docs/Solver-Functions.md)
 
+- Examples
+	- [Form Editor](examples/form_editor/README.md)
+	- [Form Editor (Flex Height)](examples/form_editor_flex/README.md)
+
 - Resources
 	- [Example Application](#/README?id=example-application)
 	- [GitHub](https://github.com/stevenvelozo/pict-section-formeditor)

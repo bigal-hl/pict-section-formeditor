@@ -76,7 +76,7 @@ Result = 1 * sqrt(16)
 ## Related Functions
 
 - [abs](./abs.md) - Absolute value
-- [pow](./pow.md) - Power/exponentiation (use `^` operator)
+- pow - Power/exponentiation (use `^` operator)
 
 ## Notes
 

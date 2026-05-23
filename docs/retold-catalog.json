@@ -1,5 +1,5 @@
 {
-	"Generated": "2026-05-22T05:45:16.500Z",
+	"Generated": "2026-05-23T01:50:24.954Z",
 	"Mode": "module",
 	"GitHubOrg": "stevenvelozo",
 	"DefaultBranch": "master",
@@ -129,6 +129,19 @@
 				]
 			},
 			{
+				"Title": "Examples",
+				"Children": [
+					{
+						"Title": "Form Editor",
+						"Path": "examples/form_editor/README.md"
+					},
+					{
+						"Title": "Form Editor (Flex Height)",
+						"Path": "examples/form_editor_flex/README.md"
+					}
+				]
+			},
+			{
 				"Title": "Resources",
 				"Children": [
 					{
@@ -154,6 +167,17 @@
 			"_sidebar.md",
 			"_topbar.md",
 			"_version.json",
+			"examples/README.md",
+			"examples/form_editor/README.md",
+			"examples/form_editor/codejar.js",
+			"examples/form_editor/codemirror-bundle.js",
+			"examples/form_editor/form_editor_example.js",
+			"examples/form_editor/icon-chooser.html",
+			"examples/form_editor/index.html",
+			"examples/form_editor_flex/README.md",
+			"examples/form_editor_flex/codejar.js",
+			"examples/form_editor_flex/form_editor_flex_example.js",
+			"examples/form_editor_flex/index.html",
 			"index.html",
 			"retold-catalog.json",
 			"retold-keyword-index.json",

@@ -1,5 +1,7 @@
 # pict-section-formeditor
 
+> **[&#9654; Read the Pict-Section-Formeditor Documentation](https://stevenvelozo.github.io/pict-section-formeditor/)** &mdash; interactive docs with the full API reference.
+
 A visual editor for [pict-section-form](https://github.com/stevenvelozo/pict-section-form) configuration manifests. Build, edit, and preview form layouts in the browser with a drag-and-drop interface, inline property editing, solver expression authoring, and live form preview.
 
 ## Features

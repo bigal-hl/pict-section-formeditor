@@ -1,0 +1,6 @@
+{
+	"Name": "Form Editor Playground",
+	"Hash": "FormEditorPlayground",
+	"MainViewportViewIdentifier": "FormEditor",
+	"AutoRenderMainViewportViewAfterInitialize": true
+}

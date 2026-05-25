@@ -1,0 +1,8 @@
+{
+	"Product": "FormEditorPlayground",
+	"FormEditorViewConfig":
+	{
+		"ManifestDataAddress": "AppData.FormConfig",
+		"ActiveTab":           "visual"
+	}
+}

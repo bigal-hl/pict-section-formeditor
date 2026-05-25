@@ -1,0 +1,45 @@
+{
+	"FormConfig":
+	{
+		"Scope": "ContactForm",
+		"Sections":
+		[
+			{
+				"Hash": "ContactInfo",
+				"Name": "Contact Information",
+				"Description": "Edit the manifest in any tab and click Run to see the form editor reload.",
+				"Groups":
+				[
+					{
+						"Hash": "ContactInfoGroup",
+						"Name": "Your Details"
+					}
+				]
+			}
+		],
+		"Descriptors":
+		{
+			"Contact.FirstName":
+			{
+				"Name":     "First name",
+				"Hash":     "FirstName",
+				"DataType": "String",
+				"PictForm": { "Section": "ContactInfo", "Group": "ContactInfoGroup", "Row": 1, "Width": 6, "InputType": "Text" }
+			},
+			"Contact.LastName":
+			{
+				"Name":     "Last name",
+				"Hash":     "LastName",
+				"DataType": "String",
+				"PictForm": { "Section": "ContactInfo", "Group": "ContactInfoGroup", "Row": 1, "Width": 6, "InputType": "Text" }
+			},
+			"Contact.Email":
+			{
+				"Name":     "Email address",
+				"Hash":     "Email",
+				"DataType": "String",
+				"PictForm": { "Section": "ContactInfo", "Group": "ContactInfoGroup", "Row": 2, "Width": 12, "InputType": "Email" }
+			}
+		}
+	}
+}

@@ -15,14 +15,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/stevenvelozo/pict-section-formeditor.git"
+        "url": "git+https://github.com/fable-retold/pict-section-formeditor.git"
     },
     "author": "steven velozo <steven@velozo.com>",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/stevenvelozo/pict-section-formeditor/issues"
+        "url": "https://github.com/fable-retold/pict-section-formeditor/issues"
     },
-    "homepage": "https://github.com/stevenvelozo/pict-section-formeditor#readme",
+    "homepage": "https://github.com/fable-retold/pict-section-formeditor#readme",
     "dependencies": {
         "pict-section-code": "^1.0.11",
         "pict-section-content": "^1.0.5",

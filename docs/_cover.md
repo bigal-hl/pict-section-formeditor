@@ -9,7 +9,7 @@
 - Embedded help for 127+ solver functions
 
 [Get Started](#/README)
-[View on GitHub](https://github.com/stevenvelozo/pict-section-formeditor)
+[View on GitHub](https://github.com/fable-retold/pict-section-formeditor)
 
 <!-- docuserve:examples:start -->
 | Example | Complexity | Launch |

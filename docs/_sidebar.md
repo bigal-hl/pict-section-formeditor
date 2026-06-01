@@ -38,4 +38,4 @@
 - Resources
 	- [Example Application](#/README?id=example-application)
 	- [GitHub](https://github.com/fable-retold/pict-section-formeditor)
-	- [pict-section-form](https://github.com/fable-retold/pict-section-form)
+	- [pict-section-form](https://fable-retold.github.io/pict-section-form/)
